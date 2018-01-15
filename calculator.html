@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Calculator</title>
+	<style type = "text/css">
+		body {
+			text-align: center;
+			background: url("https://cdn.pixabay.com/photo/2015/05/31/13/20/office-791733_960_720.jpg") no-repeat center center;
+			background-size: 170%;
+		}
+		h1 {
+			color: pink;
+			font-size: 3em;
+		}
+		#calculator {
+			border: 5px solid pink;
+			background-color: silver;
+			width: 250px;
+			height: 300px;
+			padding: 20px;
+			border-radius: 20px;
+			margin: auto;
+			box-shadow: 0px 0px 2px 1px pink;
+		}
+		#display {
+			position: relative;
+			left: 2px;
+			top: 2 px;
+			height: 30px;
+			width: 230px;
+			color: black;
+			text-align: right;
+			font: 21px bold;
+			border: 1px solid black;
+			box-shadow: 0px 0px 2px 1px black;
+		}
+		.button {
+			width: 40px;
+			height: 30px;
+			position: relative;
+			margin: 4px;
+			box-shadow: 0px 0px 2px 1px black;
+			text-align: center;
+			font: 18px bold;
+			border-radius: 2px;
+			outline: none;
+		}
+		#equal {
+			width: 96px;
+		}
+	</style>
+</head>
+<body> 
+	<h1>Javascript Simple Calculator</h1>
+	<div id = "calculator">
+	<div><input type = "text" size = "30" id = "display" disabled>
+		<div class = "keys">
+			<p>
+				<input type = "button" class = "button" value = "c" onclick = 'addtoDisplay("c")'>
+				<input type = "button" class = "button" value = "CE" onclick = 'backspace()'>
+				<input type = "button" class = "button" value = "x*x" onclick = 'power()'>
+				<input type = "button" class = "button" value = "+" onclick = 'addtoDisplay("+")'>
+		
+			</p>
+			<p>
+				<input type = "button" class = "button" value = "7" onclick = 'addtoDisplay("7")'>
+				<input type = "button" class = "button" value = "8" onclick = 'addtoDisplay("8")'>
+				<input type = "button" class = "button" value = "9" onclick = 'addtoDisplay("9")'>
+				<input type = "button" class = "button" value = "-" onclick = 'addtoDisplay("-")'>
+			</p>
+			<p>
+				<input type = "button" class = "button" value = "4" onclick = 'addtoDisplay("4")'>
+				<input type = "button" class = "button" value = "5" onclick = 'addtoDisplay("5")'>
+				<input type = "button" class = "button" value = "6" onclick = 'addtoDisplay("6")'>
+				<input type = "button" class = "button" value = "*" onclick = 'addtoDisplay("*")'>
+			</p>
+			<p>
+				<input type = "button" class = "button" value = "1" onclick = 'addtoDisplay("1")'>
+				<input type = "button" class = "button" value = "2" onclick = 'addtoDisplay("2")'>
+				<input type = "button" class = "button" value = "3" onclick = 'addtoDisplay("3")'>
+				<input type = "button" class = "button" value = "/" onclick = 'addtoDisplay("/")'>
+			</p>
+			<p>
+				<input type = "button" class = "button" value = "0" onclick = 'addtoDisplay("0")'>
+				<input type = "button" class = "button" value = "." onclick = 'addtoDisplay(".")'>
+				<input type = "button" class = "button" id = "equal" value = "=" onclick = 'result()'>
+			</p>
+		</div>
+	</div>
+	</div>
+	<script>
+		var display = document.getElementById("display");
+		function addtoDisplay(val) {
+			if (val === 'c') {
+				display.value = '';
+			} else {
+				display.value += val;
+			};
+		};
+		function result(){
+			val = display.value;
+			val = eval(val);
+			display.value = val;
+		};
+		function power(){
+			val = display.value;
+			val = eval(val*val);
+			display.value = val;
+		};
+		function backspace() {
+			val = display.value;
+			var num = val.substring(0, val.length-1);
+			display.value = num;
+		}
+	</script>
+</body>
+</html>

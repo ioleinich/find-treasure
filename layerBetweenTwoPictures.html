@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Эффект переключения между двумя фотографиями</title>
+	<style>
+		h1{
+			text-align: center;
+		}
+		
+		#mySlide {
+			width: 650px;
+			height: 450px;
+			border: 1px solid black;
+			position: relative;
+			overflow: hidden;
+			margin: auto;
+			
+		}
+		
+		#first, #second {
+			width: 650px;
+			height: 450px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#first {
+			background: url("https://photoshop-master.ru/lessons/les4128/9.jpg");
+		}
+		#second {
+			background: url("https://photoshop-master.ru/lessons/les4128/3.jpg");
+		}
+		
+	</style>
+</head>
+<body>
+	<h1 id = "text"> Эффект переключения между двумя фотографиями </h1>
+		<div id = "mySlide">
+			<div id = "first" alt ="first"></div>
+			<div id = "second" alt = "second"></div>
+
+			<!--<img src = "https://praktika.ru/wp-content/uploads/2017/03/how-famous-city-changed-timelapse-evolution-before-after-22-577cc8e7010da__880.jpg" id = "first" alt ="first">
+			<img src = "https://praktika.ru/wp-content/uploads/2017/03/how-famous-city-changed-timelapse-evolution-before-after-22-577cc8e7010da__880.jpg" id = "second" alt = "second"> -->
+		</div>
+		
+	<script>
+		document.getElementById('mySlide').onmousemove = function(event) {
+			var coordX = event.offsetX;
+			document.getElementById("second").style.width = coordX + "px";
+		}
+		
+	</script>
+
+</body>
+</html>

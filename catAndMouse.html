@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Кот ловит мышку</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+		.cat {
+			width = 20px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<h1 id = "text"> Бег рисунка за курсором мышки </h1>
+		<script>
+		document.onmousemove = moveCat;
+		
+		function moveCat () {
+			var cat = document.createElement("div");
+			cat.setAttribute("class", "cat");
+			cat.insertAdjacentHTML("BeforeEnd", "<img src = 'https://cdn2.iconfinder.com/data/icons/cat-power/64/cat_fight.png' id = 'cat'>");
+			document.body.appendChild(cat);
+			
+			cat.style.left = event.clientX + "px";
+			cat.style.top = event.clientY - 50 + "px";
+			
+			cat.style.transition = "all 0.5s linear 0s";		
+			cat.style.left = cat.offsetLeft - 20 + "px";
+			cat.style.opacity = 0;
+			
+		}
+	</script>
+
+</body>
+</html>
