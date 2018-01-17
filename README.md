@@ -1,2 +1,2 @@
 # JS-practice-snake
-This short JS game will return you to “Tetris games” time. Use “Up”, “Down”, “Left” and “Right” keys to control snake and catch apples. Download “.html”  and “.js” files and make doubleclick on “.html” file. This game use “canvas” and my first touch to “OOP programming”.
+Find Treasure – is first experience with “Canvas”. Download “.html”  and “.js” files, make doubleclick on “.html” file and try find pirate treasure. Rules are simple: black dot – you are fare away from gold, blue – you did first step to find it, yellow – you are very close, green – you are almost touch it. Enjoy! 
